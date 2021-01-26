@@ -1,0 +1,232 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+
+
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+
+\usepackage{termcal}
+
+% Few useful commands (our classes always meet either on Monday and Wednesday 
+% or on Tuesday and Thursday)
+
+\newcommand{\MWClass}{%
+\calday[Monday]{\classday} % Monday
+\skipday % Tuesday (no class)
+\calday[Wednesday]{\classday} % Wednesday
+\skipday % Thursday (no class)
+\skipday % Friday 
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\TRClass}{%
+\skipday % Monday (no class)
+\calday[Tuesday]{\classday} % Tuesday
+\skipday % Wednesday (no class)
+\calday[Thursday]{\classday} % Thursday
+\skipday % Friday 
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\MFClass}{%
+\calday[Monday]{\classday} % Monday
+\calday[Tuesday]{\noclassday} % Tuesday
+\calday[Wednesday]{\noclassday} % Wednesday
+\calday[Thursday]{\noclassday} % Thursday
+\calday[Friday]{\classday} % Friday
+\skipday\skipday % weekend (no class)
+}
+
+\newcommand{\Holiday}[2]{%
+\options{#1}{\noclassday}
+\caltext{#1}{#2}
+}
+
+
+
+\titlespacing*{\section}{0pt}{1.5ex}{0.5ex}
+\titlespacing*{\subsection}{0pt}{1.5ex}{0.5ex}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+\begin{document}
+
+\title{Physics 427: Introduction to Computational Physics \\ {\em Tentative Syllabus}}
+\date{}
+\maketitle
+
+
+\section*{Course Instructor}
+
+\begin{tabularx}{1.0\textwidth}{
+  >{\centering\arraybackslash}X
+  >{\centering\arraybackslash}X
+  >{\centering\arraybackslash}X
+  >{\centering\arraybackslash}X
+}
+ Name & Email & Office & Office Hours \\
+ \hline
+ Jim Mertens & \href{mailto:jmertens@wustl.edu}{jmertens@wustl.edu} & Zoom & Th, F 4-5 \\
+ Matt Carney & \href{mailto:c.matthew@wustl.edu}{c.matthew@wustl.edu} & Zoom & M 12-1, W 4-5 \\
+\end{tabularx}
+
+\vspace{0.2em}
+
+Office hours will be available during scheduled times over zoom.
+Alternate times may be scheduled by appointment.
+
+\section*{Course Description and Goals}
+
+Class time will be split between formal lectures, worked examples, and small-group assignments.
+Mondays will typically introduce new topics and concepts, and examples of these ideas.
+Friday classes will typically review and expand on homework assignments relevant to course content,
+followed by dedicated time for working on labs (group assignments). Because the homework assignments
+will include introductory content for the labs, it is important to complete them before class begins
+on Fridays.
+
+Course aims will include:
+\begin{itemize}
+  \setlength\itemsep{-0.0em}
+  \item Understanding, implementing, and utilizing methods to numerically solve algebraic, integral, and differential equations.
+  \item Collaborating on programming projects using commonly available tools.
+  \item Evaluating the effectiveness of applying different numerical techniques to different classes of problems.
+\end{itemize}
+
+Students taking this course may have a variety of backgrounds, both in terms of prior physics preparation
+and prior programming experience. While no prior programming knowledge will be assumed, some experience will
+be very helpful; students with no previous experience may find an increased workload.
+
+Students are encouraged to work together, and expected to collaborate on lab (group) assignments.
+This course is designed to be very open. Many assignments will be in an electronic form.
+This does not mean copying assignments is permitted; studets will be expected to follow the
+University policy on academic integrity
+(\href{https://students.wustl.edu/academic-integrity/}{students.wustl.edu/academic-integrity}).
+
+If you have a disability that requires an accommodation, please talk to me and consult
+the Disability Resource Center at Cornerstone (\href{https://cornerstone.wustl.edu}{cornerstone.wustl.edu}).
+Cornerstone staff will determine appropriate accommodations and I will work with them to make sure these are
+available to you. 
+
+\section*{Topics Covered\footnote{The list of topics covered is tentative, as with the rest of the syllabus.}}
+
+
+\paragraph*{Tentative Schedule:}
+
+The general class structure will involve introducing basic content on Mondays, including theoretical ideas and
+some practical examples. Fridays will typically consist of a shorter overview of more advanced material, followed
+by an in-class lab assignment.
+
+Most weeks, homeworks will be assigned on Monday and due Thursday; labs will be given on Fridays and due Monday.
+There may be exceptions to this due to the wellness days this semester. In those cases, the deadlines will either
+be postponed, or assignments not given.
+
+\begin{center}
+ \begin{tabularx}{\textwidth}{ c X } 
+ % \hline
+ Week & Topics \\
+ \hline\hline
+ Jan 25 & Getting oriented with python, plotting. \\ 
+ % \hline
+ Feb 1 & Minimization, root finding; interpolation. \\
+ % \hline
+ Feb 8 & Linear algebraic systems: solutions, Eigendecompositions. \\
+ % \hline
+ Feb 15 & Curve fitting \& regression. No class Friday; no lab exercise. \\
+ % \hline
+ Feb 22 & Review; Exam 1. \\
+ % \hline
+ Mar 1 & Numerical integration, ODE solutions. \\ % write Euler method?
+ % \hline
+ Mar 8 & ODEs cont., shooting and relaxation. \\ % debug existing code?
+ % \hline
+ Mar 15 & Partial differential equations, hyperbolic systems and the wave equation. \\
+ % \hline
+ Mar 22 & Partial differential equations cont., the diffusion equation and elliptic equations. \\
+ % \hline
+ Mar 29 & Review; Exam 2. \\
+ % \hline
+ Apr 5 & Discrete Fourier transforms. \\
+ % \hline
+ Apr 12 & Fourier cont., spectral analysis, convolutions. No Class Monday. \\
+ % \hline
+ Apr 19 & Randomness, chaos, monte-carlo methods. \\ % Ising model, Markov chains
+ % \hline
+ Apr 26 & High-performance computing, parallelization, computing clusters. \\ % Python + MPI?
+ % \hline
+ May 3 &  Review, project presentations. No class Friday.  \\
+ % \hline
+\end{tabularx}
+\end{center}
+
+
+\section*{Texts and software}
+
+No textbook will be required. However, instruction will draw upon topics in commonly available textbooks.
+
+{\bf Numerical methods}: A good description of numerical methods is found in Numerical Recipes. This is an old book that has evolved over the years. The code in it can be atrocious\footnote{The book has been written for several languages, but as such, the code can be ignored and any language will do.}, however they give a great overview of techniques and discussions of the theory behind them. The second edition of the book is available online at \href{http://numerical.recipes/}{http://numerical.recipes}, however requires flash, and so I won't discourage you from googling for a PDF copy.
+
+{\bf Python}: Although we are using Python in this course, we will be focusing on using the NumPy and SciPy packages, which are numerical/scientific packages built in Python, and MatPlotLib for plotting. \href{https://docs.scipy.org/doc/_static/numpybook.pdf}{The Guide to NumPy} is a useful and freely available book. It goes into much more detail than we will need, but also shows some of the power of the tools at our disposal.
+
+{\bf Jupyter}: We will interface with Python through the Jupyter notebook, formerly known as the IPython notebook. (You will still see it called by both names.) Many tutorial videos exist on YouTube to help get us started. There is a lot in this video; the main canvass page will provide some additional information about python.
+
+% {\bf Other resources} : NBviewer, Binder, colab
+% 
+\clearpage
+
+\section*{Assignments and grading}
+
+Assignments in the course will consist of each of the items listed below. Grades will be weighted as
+
+\begin{tabular}{r c}
+Homework & 35\% \\
+Labs & 35\% \\
+Attendance & 10\% \\
+Exam 1 & 5\%  \\
+Exam 2 & 5\% \\
+Final project & 10\%
+\end{tabular}
+
+Due to the variety of backgrounds and material in the course, 
+assignment grading will be largely effort-based, and will not
+follow a strict rubric. Loosely, grades will be assigned as follows,
+
+\begin{tabular}{r l}
+A & Most or all work correct. \\
+B & Some work correct. \\
+C & Demonstrated effort on all work. \\
+D-F & Incomplete effort. \\
+\end{tabular}
+
+Individual assignments will drop a letter grade for each day late.
+
+Your lowest two lab grades and lowest two homework grades will be dropped.
+While possible, is not recommended you choose to ``skip'' any assignments,
+as content will build throughout the semester.
+
+Your final grade will be your mean letter grade as weighted per the above weighting schemes.
+
+\subsection*{Homework}
+Weekly homeworks will be assigned on Mondays, due Thursdays, and can include both written and coding components.
+These will aid in preparation for lab exercises on Friday, so it is important they be completed on time.
+\subsection*{Lab Exercises}
+Weekly lab exercises will be given on Fridays, designed to be completed during class, but may be completed after.
+Groups will be assigned at the beginning of the semester. You may opt to complete these individually, but in that
+case you will be encouraged to collaborate on the final project. Labs will be due on Mondays.
+\subsection*{Exams}
+There will be two open-book midterm exams. These will be short, and only
+cover basic material you should know ``by heart''.
+\subsection*{Projects}
+In place of a final exam, there will be an end-of-semester project assignment.
+This will consist of writing code to solve a physics problem of your choice
+(subject to instructor approval), followed by either a written paper, or
+an oral presentation on the problem and your solution. These may be completed
+as a small group (2-3 students) or individually. Further information will follow
+later in the semester.
+
+\end{document}

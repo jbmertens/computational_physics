@@ -1,0 +1,69 @@
+\documentclass[]{homework}
+
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+
+% \usepackage[]{floatflt}
+\usepackage{wrapfig}
+
+\begin{document}
+
+\solutions{1}{Jan. 28, 2021}
+
+
+
+\begin{problem}{1} 
+  \,
+  \begin{subproblem}{a}
+    The perimeter up to $N$ squares will be
+    \begin{equation}
+      P_N = \sum_{i=1}^N  4 \left( \frac{1}{\sqrt{2}} \right)^{i-1}\, = 8 \frac{1-2^{-N/2}}{2-\sqrt{2}} .
+    \end{equation}
+    In the limit where $N \rightarrow \infty$, this expression becomes
+    \begin{equation}
+      \lim_{N\rightarrow \infty} P_N = 8 + 4 \sqrt{2} \,.
+    \end{equation}
+  \end{subproblem}
+
+
+  \begin{subproblem}{b}
+    The area up to $N$ squares will be
+    \begin{equation}
+      A_N = \sum_{i=1}^N 2^{1-i} = 2\left(1-2^{-N}\right)\,.
+    \end{equation}
+    In the limit where $N \rightarrow \infty$, this expression becomes
+    \begin{equation}
+      \lim_{N\rightarrow \infty} A_N = 2 \,.
+    \end{equation}
+  \end{subproblem}
+
+
+  \begin{subproblem}{c}
+    Perimeter:
+    \begin{equation}
+      N > 6 - 2 \log_2 \left( \epsilon (2 - \sqrt(2) \right) .
+    \end{equation}
+    Area:
+    \begin{equation}
+      N > - \log_2 ( \epsilon/2 ) .
+    \end{equation}
+  \end{subproblem}
+
+  \begin{subproblem}{d}
+    For $\epsilon=10^{-7}$, $N \gtrsim 55$ terms for the perimeter and $N \gtrsim 25$ for the area.
+
+    Performing the sums explicitly, I find
+    $\left|P_{55} - P\right| \simeq 7\times10^{-8}$ and $\left|A_{25} - A\right| \simeq 6\times10^{-8}$.
+
+    For $\epsilon=10^{-15}$, I find $N \gtrsim 108$. When performing the sum in this case, I find
+    $\left|P_{108} - P\right| \simeq 4\times10^{-15}$. Adding additional terms makes no improvement!
+    Notice that the terms in the sum are now $\mathcal{O}(10^{-16})$, which is at the limit of numerical
+    roundoff error when compared to the overall sum value of $\sim 13$.
+  \end{subproblem}
+\end{problem}
+
+
+
+
+\end{document}
+

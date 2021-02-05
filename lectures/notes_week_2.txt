@@ -1,0 +1,63 @@
+Monday:
+
+  - Start getting into ROOTs:
+  ? - Do you think there is a method *guaranteed* to find a root?
+
+  - part of the time on roots, minimization;
+     finding roots:
+     - By-eye :) 
+     - Bisection method; guaranteed? Y, convergence? linear
+     - Newton method deriv. guaranteed? N, convergence? quadratic
+        >> Show eg. stuck in a loop!
+     - Secant method deriv. (finite diff. appx. of ^^) guaranteed? N, convergence? quadratic // works when you don't know the derivative!
+
+  - example Animated root finding
+
+     - Higher order appx. to ^^ (improving convergence) guaranteed? NN, convergence? cubic
+     - Dekker's is just secant or bisection, whichever is best!
+     - Brent is combination of (inverse) quadratic interpolation & bisection
+
+  - example Root_Finding.ipynb
+
+  - Minimization:
+    - Bracketing works here too, but with 3 points: two high, one low between
+    - "Walking downhill" works
+    - Brent's method w/ normal parabolic fit works
+
+  Friday: a bit on multidimensional algs.
+
+
+
+  - part of the time on splines & interp
+
+     - splines -- matched lines, cubic fns, etc.
+       >> work out for a few points?
+     - polynomial fit (lagrange interpolating poly.) -- on homework
+       >> work out for a few points?
+       >> write down general formula?
+       >> Different algs. try to efficiently compute, store, and recall coefficients.
+          One is Neville's algorithm.
+
+     -- Can you think of any problems with *extrapolation*?
+        Do you think these are a problem in
+        How can you mitigate these issues?
+
+     - example Interpolation.ipynb
+
+
+
+Friday:
+  - 
+  
+  - Multidimensional minimization
+  - Multidimensional interpolation:
+    - successive interpolation / splines
+    - unstructured interpolation
+  - Extrapolation & pade approximants
+
+
+  - example Newton_Raphson.ipynb
+
+
+
+  - lab

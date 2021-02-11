@@ -1,0 +1,25 @@
+In recent decades, computational physics has come to provide us with a new way to investigate the behavior of physical phenomena. It now plays a vital role in our understanding and interpretation of the world around us, complementary to and co-equal with theoretical and experimental lines of inquiry. This course will provide an introduction to methods used in computational physics, including numerical integration, solutions to differential equations, and statistical techniques. The format will combine lectures and hands-on experience, with an emphasis on research-style small-group projects. Prerequisites include Math 233 or equivalent. Math 217 and 309 or equivalents are strongly recommended. No previous programming experience is required, but is helpful.
+
+
+
+1) Basic latex + basic python + basic plots
+  a) get oriented
+  b) Minimization / finding roots
+2) Topic: Matrix stuff, more complicated plots (2d, ..)
+  a) Linear algebraic systems
+  b) Fitting & regression
+Exam 1
+3) ODEs
+  a) Intro - basic solutions; write Euler method?
+  b) Something more difficult; debug something
+4) PDEs
+  a) Diffusion equation & implicit integration
+  b) Wave equation (sourced?) & explicit integration
+Exam 2
+5) Fourier stuff
+  a) Discrete fourier transforms -- intro
+  b) Solutions to differential equations; "power"
+6) Randomness, chaos, monte-carlo
+  a) Ising model, Markov chains
+  b) Little bit of something on the cluster (python+MPI?)
+Project

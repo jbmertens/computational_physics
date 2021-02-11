@@ -1,0 +1,81 @@
+Monday:
+
+
+  ? Can you think of physical systems whose dynamics are, or can be mapped, to solving a system of linear equations?
+    You've hopefully seen some examples in LA class.
+    Any linear system! Includes systems described by differential equations.
+      -- classic examples: systems of springs, circuit analysis
+
+  - Linear algebraic systems: solutions
+    Solving Ax = b
+    - Gaussian elim. for system of linear eqs.
+    - LU decomposition instead
+
+    Show that linear diff. eqs map to linear algebraic systems
+      (Quantum mechanics, Wave mechanics)
+      (Electro/Gravitational systems (poisson))
+      (Linear Markov/Stochastic processes)
+
+    Solving Ax = 0 (Null space)
+
+
+  Linear_Equations.ipynb
+
+
+  ? What is eigenstuff useful for?
+   -  Eigenstuff... make a better ?n
+      monte carlo ex.
+
+  - Eigendecompositions
+    review eigenstuff... recall eigenvectors, eigenvalues, determinants
+    Functionality exists in python
+    Matrix inversion--the PDP way
+
+    Eigenvalues.ipynb
+
+
+  HW: eigenstuff
+
+
+
+
+Friday:
+
+  - Something more fun and interesting
+    SVD / PCA
+     - Ax = b
+     A = U w VT
+        U, V can be funny dimensions
+        Want: VT V = 1
+              UT U = 1
+        General procedure:
+          find Eigenvectors of AT A, A AT:
+          AT A = V wT UT U w VT = V wT w VT -> V is the matrix that diagonalizes AT A
+          A AT = U w wT UT -> U is a matrix that diagonalizes AT A.
+        => columns of V, U are eigenvectors
+
+        What about the null space vectors?
+        If x is in null space of A, it will also be in the null space of (AT A)
+        A x = 0
+        = (AT A) x
+        = (V wT w) (VT x) = 0 <- The row space is orthogonal to the null space;
+                                 so non-trivial rows in VT actuall span the
+                                 null space; provide an orthonormal basis that spans the null space!
+
+        (Pseudo) inverse: A^-1 = V 1/w U^T
+        set 1/w = 0 if w = 0 !
+        Gives AT A AT = AT,
+              A AT A = A
+
+    Applications: least squares (Monday)
+                  principle component analysis (provides a "basis" for data least variance)
+                  (See: https://arxiv.org/pdf/1404.1100.pdf)
+
+    example
+
+
+
+
+  - lab
+    another eigenvalue thing: lab 9 from old p250
+

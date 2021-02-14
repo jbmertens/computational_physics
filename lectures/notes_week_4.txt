@@ -1,0 +1,17 @@
+Monday:
+
+
+  Least squares fitting
+    - Standard derivation:
+        maximize likleihood / minimize stdev.
+        Chi^2 / goodness of fit
+
+    - SVD derivation via minimization
+
+    - Smoothing Splines
+      
+  
+  Go over lab?
+
+
+

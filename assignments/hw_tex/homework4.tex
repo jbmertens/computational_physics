@@ -1,0 +1,55 @@
+\documentclass[]{homework}
+\usepackage{tikz}
+\usepackage{wrapfig}
+
+\begin{document}
+
+
+\homework{4}{Feb. 18, 2021}
+
+
+\begin{problem}{1}
+
+  In the previous homework we encountered the Hilbert matrix and saw that it is ill-conditioned.
+  This is not just a matrix invented by a mathematician to create problems\footnote{Not to say that a mathematician would not create such a matrix for just such a purpose.} but instead can appear
+  in a minimization problem.
+  Suppose we are given a known function $g(x)$ and wish to expand it in a finite power series so that
+  \[ g(x) \approx \sum_{i=0}^n a_i x^i. \]
+  To find the coefficients, $a_i$, we could minimize a ``$\chi^2$-like'' quantity we define as
+  \[ X^2 \equiv \int_0^1 \left[ g(x) - \sum_{i=0}^n a_i x^i \right]^2 \mathrm{d} x. \]
+  Notice that if the integral were replaced by a sum over a finite number of points this would just be the $\chi^2$.
+  When we minimize $X^2$ with respect to the coefficients $a_i$ we end up with a system of linear equations that can be written in the familiar form
+  \[ \mat A \vec a = \vec b, \]
+  where now $\vec a$ is a vector with components given by the coefficients $a_i$.
+  This system of equations can then be solved.
+  \begin{subproblem}{a}
+    Perform the minimization and find the expression for the
+    components of $\vec b$.  These will depend on $g(x)$, but, given a
+    particular functional form for $g(x)$, the values can be
+    calculated resulting in a known vector $\vec b$.
+  \end{subproblem}
+  \begin{subproblem}{b}
+    Again from the minimization determine the components of the matrix
+    $\mat A$.  You should find that the $A_{ij}$ are precisely the
+    components of the Hilbert matrix. \note{It can be useful to
+      consider a small $n$ case, such as $n=2$, to more directly see
+      the structure of the matrix.  The results can be generalized to
+      arbitrary $n$ from there.}
+  \end{subproblem}
+
+\end{problem}
+
+
+
+\begin{problem}{2}
+  Complete the Jupyter notebook assignments.
+\end{problem}
+
+
+\begin{problem}{3}
+  Complete the ``Homework 4 Survey'' in the quizzes section of Canvas.
+\end{problem}
+
+
+\end{document}
+

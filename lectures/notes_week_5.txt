@@ -1,0 +1,30 @@
+Monday:
+
+  - Make labs due Tues is fine
+
+
+  - Review ; make topics map
+    Wk1; prec
+    - ? precision
+
+    Wk2; opt
+    - ? root bracket cot?
+
+    Wk2; Interp
+    - ? 
+
+    Wk3; Linear systems
+    - ? 
+
+    - Eigenvalues
+      - Markov process eg.?
+
+    Wk4; curve fits
+    - ?
+
+
+  - exam notes:
+    
+
+
+  - next week difeq

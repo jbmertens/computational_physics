@@ -1,0 +1,70 @@
+
+Monday -- 
+
+ - introductions: name, especially pronounciation, if you have a nickname if different than what I 
+    name, year, department; fun fact 
+
+ - go over syllabus:
+     For labs / group assignments. How should groups be divided?
+     Options: will let you complete individually if you like
+              or work in group (I'll assign.)
+
+ - big range of students; grading structure hopefully reflects that.
+   Expectations for grad students will be much higher than underclass.
+
+ - Group structure?
+
+ ?-- who has used python? For what?
+     -- Anything you liked about it? didn't like?
+ - python -- why python? (slides)
+    Other languages: julia is up & coming, https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/python3-gcc.html
+    Python notebook -- use anaconda
+      Welcome to use co-lab; really should install jupyter (anaconda)
+      Work (esp. research) can be done in plain text files, assignments will rely on notebooks.
+
+
+
+ - convergence-- Square root of 8.
+   - Exercise: Can you think of methods to compute this?
+   Work through 3 of these: perturbation vs. iterative (vs. root finding?)
+
+ - Numbers_and_Precision.ipynb
+
+
+ - homework 1 due Thursday.
+
+
+
+
+
+
+Friday -- 
+  20-30 m
+  - hw review
+
+  - Arrays_Vectors.ipynb
+
+  - Sources of error:
+     - precision (eg. from finite number of digits-- discussed this some last class)
+     - truncation (eg. in root-finding methods we saw; last example in notebook, finite-difference)
+     - Discretization from function representation at a finite number of points (incl. resolution, again e.g. finite difference method)
+
+  -? Do you know of, or can you think of of any problems where each source of error matters?
+     Guessing is ok! Try to justify your idea.
+
+     - Precision: Chaotic systems; solar-system (N-body) integration
+     - Truncation error: time-integration, lattice simulations (finite differencing)
+     - Discretization error: Simulations of 'shocks' / discontinuous behavior
+ 
+     Need to make sure errors don't "blow up" !
+     - Stability issues (also lab)
+        - alg. stability -- explain golden ratio from num. recipes? don't go into detail.
+
+
+     Any examples of this?
+      - Stability: Inverse diffusion processes: become ``ill-posed'' at some point.
+              Related to numerical GR problems; one of the major challenges in the 60s-late 90s was how to simulate black holes
+
+
+  - group activity:
+  -- lab 1

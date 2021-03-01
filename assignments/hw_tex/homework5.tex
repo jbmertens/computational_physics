@@ -1,0 +1,35 @@
+\documentclass[]{homework}
+
+\begin{document}
+
+
+\homework{5}{March 4, 2021}
+
+\begin{problem}{1}
+  Review the {\em ODE Initial Value Problems} notebook from class, which will be of relevance for the Jupyter notebook portion of this assignment, and the lab this week. You should also review the {\em Numerical Derivatives and Richardson Extrapolation} notebook, which will be of additional relevance for next week.
+\end{problem}
+
+\begin{problem}{2}
+  We might think that all this work to make sophisticated algorithms is not necessary, why not just make
+  step sizes $\Delta x$ extremely small?
+  Here we will see that this approach does not work.
+  As an example, we will consider $f(x)=\exp^{-x/3}$ and evaluate the derivative at $x=0.7$ using a finite difference formula.
+  
+  Calculate the fractional error in the numerical derivative for $\Delta x=10^{-4}$, $10^{-5}$, $10^{-6}$, and $10^{-7}$.
+  You should find that the error starts growing at some point as $\Delta x$ gets smaller! How can the error grow as $\Delta x$ gets smaller?
+  
+  \note{Since it is not hard, you may want to calculate the error for a large number of $\Delta x$ values and make a log-log plot.
+      You will see that the error is not a smooth function but does (eventually) have a general trend of growing as $\Delta x$ gets smaller.}
+\end{problem}
+
+\begin{problem}{3}
+  Complete the Jupyter notebook part of the assignment.
+\end{problem}
+
+\vspace{1cm}
+
+{\bf Optional exam review, Due next Monday, March 8th:} Review your exam, and correct any incorrect or missing work.
+For a fully corrected exam, you can collect up to half of the grade you missed (eg. $C \rightarrow B$).
+
+\end{document}
+

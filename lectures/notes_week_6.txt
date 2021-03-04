@@ -1,0 +1,28 @@
+Monday:
+
+  - Ordinary differential equation integration
+
+  Euler's method
+
+
+  ? How to improve upon Euler's method?
+
+    - Richardson extrapolation
+    - Multi-point methods
+    - Runge-Kutta methods
+      explicit vs. implicit
+    - "Adaptive" step size
+
+  Example: 
+    odeint vs. solve_ivp
+
+  Can we solve higher order equations, or multiple equations simultaneously
+    Multiple equations & re-write as higher-order equations
+
+
+
+Friday:
+
+  - Multi-point ODE methods
+
+  - Boundary value problems: shooting

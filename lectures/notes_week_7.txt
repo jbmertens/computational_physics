@@ -1,0 +1,30 @@
+Monday: 
+
+  - stability of ODE integration
+
+    Example--?
+
+  - implicit ODE methods
+
+
+
+  ---
+
+  - Numerical integration:
+      Tabulated ("known") function: simps, trapz
+        Richardson extrapolation ~ higher order ()
+        Idea: variable transformation to transform infinite range integrals
+        or to eliminate singularities (NR. p. 173)
+
+      Analytically "known" function
+        scipy quad(rature) function handles this-
+
+
+  What about infinite integrands, or singular functions?
+
+
+
+Friday:
+
+  Monte-carlo integration?
+  Convolutions?

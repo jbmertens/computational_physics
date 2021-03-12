@@ -1,0 +1,58 @@
+\documentclass[]{homework}
+
+\begin{document}
+
+
+\homework{6}{March 11, 2021}
+
+\begin{problem}{1}
+  A second-order multi-point method for solving the differential equation
+  \[ \frac{d f(x)}{d x} = A(f(x),x) \]
+  can be derived using center differencing to approximate the derivative
+  instead of using forward differencing, as discussed in class. We will be
+  interested in writing down a formula for $f(x+\Delta x)$ given
+  knowledge of $f(x)$ and $f(x-\Delta x)$, and then analyzing the
+  the stability of this scheme.
+  \begin{subproblem}{a}
+    Write down an approximation for $f(x+\Delta x)$ using the center differencing formula.
+    You can proceed by writing down the formula you derived on the
+    midterm and solving for $f(x+\Delta x)$ in terms of $f(x-\Delta x)$ and $A(f(x), x)$.
+    For this method, we will therefore need information about the function
+    at two points, $f(x-\Delta x)$, and $f(x)$ in order to compute $A(f(x), x)$.
+  \end{subproblem}
+  \begin{subproblem}{b}
+    Derive an equation for the error $\epsilon(x+\Delta x)$ for the multi-point
+    method. To do so, use the fact that the numerical solution is only an
+    approximation of the true solution, and so includes some error, i.e.
+    $f(x) = f_{\rm true}(x) + \epsilon(x)$. Write an equation for how the
+    error at one timestep is related to the error at past timesteps.
+    You should taylor expand the function $A$ to linear order in $\epsilon$.
+    You can then assume that $f_{\rm true}(x)$ obeys the equation you found in part (a)
+    to eliminate several terms.
+  \end{subproblem}
+  \begin{subproblem}{c}
+    Determine whether this method is stable when applied to
+    decaying, growing, and oscillating differential equations.
+    Do so by setting $A(f(x), x) = \lambda f$, with $\lambda <0$,
+    $\lambda > 0$, or $\lambda = \pm i \omega$.
+    For this method to be stable, we would like to know if there is
+    a $\Delta x$ for which the condition
+    $|\epsilon(x+\Delta x)| \le |\epsilon(x)|$ will always be true.
+    Substitute your expression for $\epsilon(x+\Delta x)$ into this
+    inequality.
+    Does there exist a (non-zero, positive)
+    $\Delta x$ which can guarantee the inequality holds?\\
+    \hint{You do not need to know $\epsilon(x)$ or $\epsilon(x-\Delta x)$
+    explicitly; it suffices to consider a ``worst-case scenario''.}
+  \end{subproblem}
+
+\end{problem}
+
+
+\begin{problem}{2}
+  Complete the Jupyter notebook assignment.
+\end{problem}
+
+
+\end{document}
+

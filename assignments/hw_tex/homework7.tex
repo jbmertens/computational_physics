@@ -1,0 +1,59 @@
+\documentclass[]{homework}
+
+\begin{document}
+
+
+\homework{7}{March 18, 2021}
+
+\begin{problem}{1} 
+  We saw in class it was possible to derive a variety of finite-difference formulae for
+  computing derivatives of arbitrary order.
+
+  \begin{subproblem}{a}
+    On the midterm, we derived an expression for centered differencing that was accurate
+    to third order, $\mathcal{O}(\Delta x^2)$. A higher-order expression, valid to order
+    $\mathcal{O}(\Delta x^4)$, is given by
+    \[
+      f'(x) = \frac{-f(x+2\Delta x) + 8f(x+\Delta x) - 8f(x-\Delta x) + f(x-2\Delta x)}{12 \Delta x}\, + \mathcal{O}(\Delta x^4).
+    \]
+    Verify this is correct by Taylor expanding the various $f$ on the right-hand
+    side of this expression and canceling terms.
+  \end{subproblem}
+
+  \begin{subproblem}{b}
+    We can similarly derive a formula accurate to $\mathcal{O}(\Delta x^2)$
+    for second derivatives. As above, verify that
+    \[
+      f''(x) = \frac{f(x+\Delta x) - 2f(x) + f(x-\Delta x)}{\Delta x^2}\,+ \mathcal{O}(\Delta x^2).
+    \]
+  \end{subproblem}
+
+\end{problem}
+
+
+\begin{problem}{2}
+  In class, we looked at the PDE\_Integration notebook for solving the
+  advection equation. This notebook can be downloaded from Canvas.
+  \begin{subproblem}{a}
+    Modify the notebook to solve the diffusion equation,
+    \[
+      \partial_t f(x, t) = c\, \partial_x^2 f(x, t)\,.
+    \]
+    Use the second-order finite-difference formula derived in problem 1b.
+    You can use the same numerical coefficient c,
+    $\Delta x$, and $\Delta t$ in the notebook, although feel free
+    to experiment with changing these. You should find that the initially
+    Gaussian profile ``diffuses'', becoming a broader, shorter distribution.
+  \end{subproblem}
+  \begin{subproblem}{b}
+    It is very difficult to write down stable solutions for this system when
+    $c$ is negative. Verify that your solution will not
+    provide a valid answer if you integrate for a sufficiently long time with
+    a negative value of $c$.
+    Can you think of a physical reason why this system is unstable?
+  \end{subproblem}
+\end{problem}
+
+
+\end{document}
+

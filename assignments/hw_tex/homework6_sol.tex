@@ -1,0 +1,50 @@
+\documentclass[]{homework}
+\usepackage{tikz}
+\usepackage{wrapfig}
+
+\begin{document}
+
+
+\solutions{6}{March 11, 2021}
+
+
+\begin{problem}{1} The second-order multi-point method
+
+  \begin{subproblem}{a} We should arrive at a formula similar to
+    \[
+      f(x+\Delta x) = f(x-\Delta x) + 2 \Delta x A(f(x), x)\,.
+    \]
+  \end{subproblem}
+  \begin{subproblem}{b}
+    Given $f = f^{\rm true} + \epsilon$, we have
+    \[
+      f^{\rm true}(x+\Delta x) + \epsilon(x+\Delta x)
+      = f^{\rm true}(x-\Delta x) + \epsilon(x -\Delta x) + 2 \Delta x A(f^{\rm true}(x) + \epsilon(x), x)\,.
+    \]
+    Assuming the true solution satisfies the result from part a, and expanding $A$, we have
+    \[
+      \epsilon(x+\Delta x)
+      = \epsilon(x -\Delta x) + 2 \Delta x \epsilon(x) \left. \frac{\partial A}{\partial f} \right|_{x}\,.
+    \]
+  \end{subproblem}
+  \begin{subproblem}{c}
+    We would like the following inequality to hold true for stability,
+    \[
+      \left| \epsilon(x+\Delta x) \right| \le  \left| \epsilon(x) \right|\,.
+    \]
+    Substituting in the result from part (b), letting $\partial A / \partial f = \lambda$, and simplifying,
+    the condition becomes
+    \[
+      \left| \frac{\epsilon(x -\Delta x)}{\epsilon(x)} + 2 \Delta x \lambda \right| \le 1\,.
+    \]
+    Whether the inequality holds will thus depend on the precise values of the error
+    at previous steps along with $\lambda$. There is, unfortunately, no value of $\Delta x$
+    which will {\em guarantee} the inequality holds, so stability is not guaranteed.
+  \end{subproblem}
+
+
+\end{problem}
+
+
+\end{document}
+

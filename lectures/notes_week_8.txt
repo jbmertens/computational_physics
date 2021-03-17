@@ -1,0 +1,13 @@
+Monday: 
+
+  - PDE integration -- basics
+    types of equations
+    finite difference methods
+
+
+Friday:
+
+  Stability of PDE integration methods
+
+  Convolutions?
+  Relaxation - elliptic equation

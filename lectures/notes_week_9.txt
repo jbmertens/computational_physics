@@ -1,0 +1,36 @@
+Monday: 
+
+  - PDEs in multiple dimensions
+
+    - boundary value methods
+      -- BVP as relaxation
+      -- Linear BVPs as a matrix problem
+
+      - 2nd derivative as a viscous term
+
+      - eqs with 2nd time derivatives ~ force equations
+
+
+    - multiple fields
+
+      - finite difference form
+      - example of stability of wave eqn ()
+      - Coordinate systems (spherical, coordinate singularity removal) (limits dx)
+      - example of convolution form
+
+    - hyperbolicity?
+
+  Homework:
+    -- Stability of wave equation? (Or CN, whichever is easier)
+    -- 
+
+Friday:
+
+  lab: Diffusion-transport equation notebook?
+
+  - radial stuff
+  - 2nd derivative as a viscous term
+  - Crank Nichelson
+
+  - Final project: 
+  - 

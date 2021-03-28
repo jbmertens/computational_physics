@@ -1,0 +1,377 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\topmargin 1in
+\rightmargin 1in
+\bottommargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Subsection*
+Von Neumann Stability Analysis
+\end_layout
+
+\begin_layout Standard
+In finite difference methods for initial value problems, we will typically
+ introduce some truncation error due to our inability to write exact expressions
+ for derivatives.
+ We will also commonly have roundoff error, although this tends to be subdominan
+t.
+ Due to these errors, there will be some difference between a 
+\begin_inset Quotes eld
+\end_inset
+
+true,
+\begin_inset Quotes erd
+\end_inset
+
+ analytic solution 
+\begin_inset Formula $f_{{\rm true}}$
+\end_inset
+
+, and an approximate numerical solution 
+\begin_inset Formula $f_{{\rm num}}$
+\end_inset
+
+,
+\begin_inset Formula 
+\begin{equation}
+f_{{\rm num}}=f_{{\rm true}}+\epsilon\,.\label{eq:numer}
+\end{equation}
+
+\end_inset
+
+In general, a method for solving initial value PDEs is considered to be
+ stable if the magnitude of the error 
+\begin_inset Formula $|\epsilon|$
+\end_inset
+
+ does not increase during integration.
+ It suffices to examine the behavior of the error when we substitute the
+ error into a finite difference equation.
+\end_layout
+
+\begin_layout Standard
+We will first consider the 1+1 advection equation using the most simple
+ example of a time integration method–Euler's method–and right-handed differenci
+ng.
+ We can generalize these ideas later.
+ Our differential equation of interest is 
+\begin_inset Formula 
+\begin{equation}
+\partial_{t}f=\partial_{x}f\,.
+\end{equation}
+
+\end_inset
+
+Given knowledge of a function a time 
+\begin_inset Formula $t$
+\end_inset
+
+, or 
+\begin_inset Formula $f(x,t)$
+\end_inset
+
+, Euler's method allows us to determine function values at a later time
+ 
+\begin_inset Formula $t+\Delta t$
+\end_inset
+
+,
+\begin_inset Formula 
+\begin{equation}
+f(x,t+\Delta t)=f(x,t)+\Delta t\partial_{x}f\,,
+\end{equation}
+
+\end_inset
+
+while right-handed finite differencing then allows us to replace the spatial
+ derivative expression with a discrete form,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f(x,t+\Delta t)=f(x,t)+\frac{\Delta t}{\Delta x}\left[f(x+\Delta x,t)-f(x,t)\right]\,.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+While the numerical solution is determined directly by this expression,
+ the true solution will obey this form as well up to truncation error,
+\begin_inset Formula 
+\begin{align}
+f_{{\rm num}}(x,t+\Delta t)= & f_{{\rm num}}(x,t)+\frac{\Delta t}{\Delta x}\left[f_{{\rm num}}(x+\Delta x,t)-f_{{\rm num}}(x,t)\right]\nonumber \\
+f_{{\rm true}}(x,t+\Delta t)= & f_{{\rm true}}(x,t)+\frac{\Delta t}{\Delta x}\left[f_{{\rm true}}(x+\Delta x,t)-f_{{\rm true}}(x,t)\right]+\mathcal{O}(\Delta x^{2},\Delta t^{2})\,.
+\end{align}
+
+\end_inset
+
+Combining these expressions with Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:numer"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, we obtain an expression for the error,
+\begin_inset Formula 
+\begin{equation}
+\epsilon(x,t+\Delta t)=\epsilon(x,t)+\frac{\Delta t}{\Delta x}\left[\epsilon(x+\Delta x,t)-\epsilon(x,t)\right]\,.\label{FTRS}
+\end{equation}
+
+\end_inset
+
+At this point, we see that the error itself will obey the advection equation;
+ in fact, for Eulerian integration of systems linear in 
+\begin_inset Formula $f$
+\end_inset
+
+, the error will generally follow the original differential equation.
+ For higher-order methods, or nonlinear equations, this may not be true.
+\end_layout
+
+\begin_layout Standard
+While this expression provides us with point-wise information about the
+ error, it does not tell us in a more global sense if the error will be
+ bounded.
+ To get a handle on this latter idea, it is useful to consider the finite
+ difference expression in Fourier space.
+ Suppose we have a function 
+\begin_inset Formula $f(x,t)$
+\end_inset
+
+.
+ We can Fourier transform one coordinate of this function, 
+\begin_inset Formula 
+\begin{equation}
+f(x,t)=\int\frac{dk}{2\pi}\tilde{f}(k,t)e^{ikx}.
+\end{equation}
+
+\end_inset
+
+For functions of many variables, we can perform an analogous transformation
+ in each coordinate we wish.
+ For now, transforming the spatial variable in Eq.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "FTRS"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ gives us
+\begin_inset Formula 
+\[
+\int\frac{dk}{2\pi}e^{ikx}\tilde{\epsilon}(k,t+\Delta t)=\int\frac{dk}{2\pi}e^{ikx}\tilde{\epsilon}(k,t)+\frac{\Delta t}{\Delta x}\left[\int\frac{dk}{2\pi}e^{ik(x+\Delta x)}\tilde{\epsilon}(k,t)-\int\frac{dk}{2\pi}e^{ikx}\tilde{\epsilon}(k,t)\right]\,.
+\]
+
+\end_inset
+
+We can simplify this notation some by dropping the integral and defining
+ 
+\begin_inset Formula $E_{k}(t)\equiv\tilde{\epsilon}(k,t)$
+\end_inset
+
+, which is the (time-dependent) fourier coefficient of the mode with wavevector
+ 
+\begin_inset Formula $k$
+\end_inset
+
+.
+\begin_inset Formula 
+\[
+e^{ikx}E_{k}(t+\Delta t)=e^{ikx}E_{k}(t)+\frac{\Delta t}{\Delta x}\left[e^{ik(x+\Delta x)}E_{k}(t)-e^{ikx}E_{k}(t)\right]\,.
+\]
+
+\end_inset
+
+We can further consider this equation for a single (arbitrary) mode 
+\begin_inset Formula $k$
+\end_inset
+
+, and drop the index 
+\begin_inset Formula $k$
+\end_inset
+
+ on the function 
+\begin_inset Formula $E_{k}$
+\end_inset
+
+.
+ Considering the behavior of a single mode can also provides us with a way
+ to analyze solutions more generally, where we might have a nonlinear system
+ and cannot perform a similar procedure.
+\end_layout
+
+\begin_layout Standard
+For the case at hand, the expression simplifies to
+\begin_inset Formula 
+\[
+E_{k}(t+\Delta t)=E_{k}(t)\left(1+\frac{\Delta t}{\Delta x}\left[e^{ik\Delta x}-1\right]\right)\,.
+\]
+
+\end_inset
+
+For stability, we would like to know if we can choose values of 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+ and/or 
+\begin_inset Formula $\Delta x$
+\end_inset
+
+ such that the error decreases for all values of 
+\begin_inset Formula $k$
+\end_inset
+
+ and 
+\begin_inset Formula $c$
+\end_inset
+
+ (which we can restrict to be a finite number),
+\begin_inset Formula 
+\[
+|E_{k}(t+\Delta t)|\le|E_{k}(t)|\,.
+\]
+
+\end_inset
+
+This expression reduces to
+\begin_inset Formula 
+\begin{align*}
+\left|1+\frac{\Delta t}{\Delta x}\left[e^{ik\Delta x}-1\right]\right| & \le1\,.
+\end{align*}
+
+\end_inset
+
+For a thorough stability assessment, we should consider all possible values
+ 
+\begin_inset Formula $k$
+\end_inset
+
+ (and the combination 
+\begin_inset Formula $k\Delta x$
+\end_inset
+
+) can take.
+ In this case, it suffices to consider a 
+\begin_inset Quotes eld
+\end_inset
+
+worse case
+\begin_inset Quotes erd
+\end_inset
+
+ scenario.
+ When 
+\begin_inset Formula $e^{ik\Delta x}=-1$
+\end_inset
+
+, the inequality becomes
+\begin_inset Formula 
+\begin{align*}
+\left|1-2\frac{\Delta t}{\Delta x}\right| & \le1\\
+0<\frac{\Delta t}{\Delta x} & \le1\,,
+\end{align*}
+
+\end_inset
+
+so through a careful choice of 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+ and 
+\begin_inset Formula $\Delta x$
+\end_inset
+
+ we can ensure stability.
+\end_layout
+
+\end_body
+\end_document

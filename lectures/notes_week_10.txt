@@ -1,0 +1,26 @@
+Monday:
+  Conceptual: difference between ODEs, PDEs, Integration?
+    in terms of A(f(x),x)
+
+  Integrals: syntax,
+    integral error estimate?
+
+  ODEs: syntax problem
+    set up a system problem
+
+  Classifications of PDEs: Hyperbolic, parabolic, elliptic
+  PDEs: Write Maxwell's equations as a set of PDEs to integrate?
+    boundary conditions
+
+  stability of ODEs, PDEs
+
+
+
+
+Friday (exam):
+  Written: conceptual integration, ODE, PDE:
+           Richardson extrapolation (is there a min. dx?)
+  Written: Set up PDE
+
+  Compute: conceptual ODE, integration
+  Compute: integration problem, ODE problem

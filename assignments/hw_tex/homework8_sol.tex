@@ -1,0 +1,67 @@
+\documentclass[]{homework}
+
+\begin{document}
+
+\solutions{8}{March 26, 2021}
+
+\begin{problem}{1}
+  \,\\
+
+  \begin{subproblem}{a}
+  The
+  finite-difference version of this scheme also determines the
+  behavior of the error,
+  \[
+    \epsilon_f(t+\Delta t, x) = \epsilon_f(t, x) + \Delta t \frac{\epsilon_f(t, x+\Delta x) - 2 \epsilon_f(t, x) + \epsilon_f(t, x-\Delta x)}{\Delta x^2}\,.
+  \]
+  \end{subproblem}
+
+  \begin{subproblem}{b}
+    Assuming the error takes the form
+    \[
+      \epsilon_f(t, x) = E(t)e^{ikx}\,,
+    \]
+    we end up with the equation
+
+    \[
+      E(t+\Delta t)e^{ikx} = E(t)e^{ikx} + \frac{\Delta t}{\Delta x^2} E(t)e^{ikx} \left[e^{ik\Delta x} - 2 + e^{-ik\Delta x}\right]\,.
+    \]
+
+    which reduces to
+
+    \[
+      E(t+\Delta t) = E(t) \left[ 1 - \frac{\Delta t}{\Delta x^2} 4\sin^2(k\Delta x/2) \right]\,.
+    \]
+
+  \end{subproblem}
+
+  \begin{subproblem}{c}
+
+    We would like for
+    \[
+      \left|E(t) \left[ 1 - \frac{\Delta t}{\Delta x^2} 4\sin^2(k\Delta x/2) \right] \right| \le |E(t)|\,,
+    \]
+
+    or 
+
+    \[
+      \left|1 - \frac{\Delta t}{\Delta x^2} 4\sin^2(k\Delta x/2) \right| \le 1\,.
+    \]
+
+    Note that $\sin^2$ is always positive, between 1 and 0,
+    and $\Delta x$ and $\Delta t$ will be positive
+    assuming usual finite differencing integration. We would therefore like 
+
+    \[
+      \frac{\Delta t}{\Delta x^2} \le \frac{1}{2}\,
+    \]
+    for stability: we can therefore carefully choose a $\Delta x$ and $\Delta t$
+    to ensure stability of this method.
+    
+  \end{subproblem}
+
+\end{problem}
+
+
+\end{document}
+

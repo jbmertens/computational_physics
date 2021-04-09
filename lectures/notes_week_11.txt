@@ -1,0 +1,22 @@
+Monday:
+  
+  Fourier transform reminders--
+
+  Discrete version
+    write FT as discrete sum
+      modes are = - modes
+
+
+  FFT
+
+
+
+Friday
+  
+  Aliasing in convolutions, multiplications
+
+  Correlation functions
+
+  Laplacian: discrete vs. continuous
+
+  Are decompositions in other geometries/coordinate systems

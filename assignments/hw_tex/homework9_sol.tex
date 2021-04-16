@@ -1,0 +1,53 @@
+\documentclass[]{homework}
+
+\begin{document}
+
+\solutions{9}{April 9, 2021}
+
+\begin{problem}{1}
+  \,\\
+
+  \begin{subproblem}{a}
+    Each term in the expression has the form $\sin(2\pi \nu t)$, and
+    the frequencies correspond to $\nu = 10 {\rm Hz}, 70 {\rm Hz}, 80 {\rm Hz}$.
+  \end{subproblem}
+
+  \begin{subproblem}{b}
+    Here the maximum (Nyquist) frequency is 80 Hz. We will need to sample at least twice per
+    period, or equivalently sample at half the Nyquist freuency to avoid aliasing, so our 
+    sampling timestep should be at most $\Delta t = 1/(2 \times 80 {\rm Hz}) = 1/160 s$.
+  \end{subproblem}
+
+  \begin{subproblem}{c}
+    We need to fully sample at least one period of each signal.
+    The lowest frequency signal corresponds to the longest period, so
+    we need a sample at least $1/10$ s long.
+  \end{subproblem}
+
+\end{problem}
+
+\begin{problem}{2}
+  Noting that the signal $g$ will be sampled at $2N$ points, which we will
+  label by $n' = 0, 1, ... 2N-1$, we can write the discrete Fourier transform
+  of $g$ as
+  \[
+    g(t_{n'}) = \sum_{m' = 0}^{2N-1} G(\nu_{m'}) e^{2\pi i m' n' / (2N)}\,.
+  \]
+  We can replace the expression for $G$ with its definition in terms of $H$.
+  Noticing that the terms in the sum will be zero when $m' \ge N$, we can
+  discard these terms in the sum, and thereby reduce the upper limit in the sum,
+  \[
+    g(t_{n'}) = \sum_{m' = 0}^{N-1} H(\nu_{m'}) e^{2\pi i m' n' / (2N)}\,.
+  \]
+  Finally, considering the case where $n' = 2n$ with $n = 0, 1, ... N-1$, 
+  and renaming $m' \rightarrow m$, we have
+  \[
+    g(t_{2n}) = \sum_{m = 0}^{N-1} H(\nu_{m}) e^{2\pi i m n / N}\,.
+  \]
+  But, this is just the definition of the transform of $h(t_n)$! So we have
+  that $g(t_{2n}) = h(t_n)$.
+
+\end{problem}
+
+\end{document}
+

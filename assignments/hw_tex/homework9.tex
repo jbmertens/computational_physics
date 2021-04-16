@@ -1,0 +1,60 @@
+\documentclass[]{homework}
+
+\begin{document}
+
+
+\homework{9}{April 9, 2021}
+
+\begin{problem}{1}
+  Consider a signal given by
+
+  \[
+  h(t) = \sin(20\pi t) - 3 \sin(140\pi t) + \cos (160 \pi t)
+  \]
+
+  for a time $t$ in seconds.
+
+  \begin{subproblem}{a}
+    What frequencies $f$ are contained in this signal?
+  \end{subproblem}
+
+  \begin{subproblem}{b}
+    What is the maximum sampling time step, $\Delta t$, we can use to avoid aliasing if we compute
+    a discrete Fourier transform? That is, what is the Nyquist frequency for this signal?
+  \end{subproblem}
+
+  \begin{subproblem}{c}
+    What is the minimum time interval over which we must sample the signal to fully capture
+    all frequencies? That is, how long must we sample the signal for in order to resolve at
+    least one full period of all frequencies present?
+  \end{subproblem}
+
+\end{problem}
+
+
+\begin{problem}{2}
+  Consider a signal $h(t_n)$ sampled at N values, and a corresponding Fourier transform $H(\nu_m)$.
+  There are a number of transformations that can be implemented in the frequency domain.
+
+  One of these is highly analogous to interpolation.
+  Suppose we construct a new signal by adding N zeros to the end of $H(\nu_m)$, that is, let 
+    \[
+      G(\nu_{m'}) = \begin{cases} 
+      H(\nu_{m'}), & 0 \le m' < N \\
+      0, & N \le m' < 2N\,.
+   \end{cases}
+    \]
+    Show the inverse Fourier transform of $G$ satisfies
+    \[
+      g(t_{2n}) = h(t_n), \mathrm{\,\,\, where \,\,\,} n = 0, 1, ...\, N-1.
+    \]
+
+\end{problem}
+
+
+\begin{problem}{3}
+  Complete the Jupyter notebook portion of the assignment.
+\end{problem}
+
+\end{document}
+

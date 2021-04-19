@@ -1,0 +1,24 @@
+- Random number generators
+    Pseudo: formula to get random number given a previous one
+      MT alg: "recurrence" relation to cycle through all possible numbers in a ~6000 digit number
+        (2^19937 − 1 bits)
+    vs. "True": exploit some random physical process;
+      https://www.random.org/ (atmospheric noise)
+      http://www.lavarnd.org/ (lava lamps)
+  Bad RNG example --
+
+- RNG distribution
+  Another task: given a certain distribution, draw from another distribution:
+    PDF transformation
+    P(a<x<b) = \int_{x_a}^{x_b} dx p(x)
+             = \int_{y_a}^{y_b} dx/dy dy p(x(y))
+
+      g(y) <=> dx/dy p(x(y))
+
+  - Example problem
+
+
+
+- Transition matrices
+  (eg. weather)
+

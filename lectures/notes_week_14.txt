@@ -1,0 +1,60 @@
+HPC items
+
+  - Cython
+
+  - Threads in python
+
+  - Database formats, structures
+
+---------------
+
+
+import scipy.linalg as la
+
+def rand_eigvals(n) :
+  mat = np.random.rand(n, n)
+  return np.real(la.eigvals(0.5*(mat+mat.T)))
+
+print("Generating matrices in serial.")
+%time evs=[rand_eigvals(1000) for _ in range(10)]
+
+print("\n\nGenerating matrices in parallel.")
+evs2 = Parallel(n_jobs=2, verbose=5)(delayed(rand_eigvals)(1000) for _ in range(10))
+
+
+
+------------
+
+
+
+def python_fib(n):
+    a = 0.0
+    b = 1.0
+    for i in range(n):
+        tmp = a
+        a = a + b
+        b = tmp
+    return a
+
+%timeit -n 200 python_fib(100)
+
+
+
+%%cython
+def cython_fib(int n):
+    cdef double a = 0
+    cdef double b = 1
+    cdef double tmp
+    for i in range(n):
+        tmp = a
+        a = a + b
+        b = tmp
+    return a
+
+
+%timeit -n 200 cython_fib(100)
+
+
+from numba import jit
+jfib = jit(python_fib)
+%timeit -n 200 jfib(100)

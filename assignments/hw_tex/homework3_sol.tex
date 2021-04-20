@@ -1,0 +1,88 @@
+\documentclass[]{homework}
+\usepackage{tikz}
+\usepackage{wrapfig}
+
+\begin{document}
+
+
+\solutions{3}
+
+
+\begin{problem}{1}
+
+
+  \begin{subproblem}{a}
+    For a symmetric $\mat A$, the components are
+    \[ \mat A = \begin{pmatrix} 14 & -2 \\ -2 & 11 \end{pmatrix}\,. \]
+  \end{subproblem}
+  \begin{subproblem}{b}
+    The eigenvalues are roots $\lambda$ of the polynomial $\det(\lambda \mat A - I)=0$.
+    This polynomial is
+    \[ (14-\lambda)(11-\lambda)-4=0\,, \]
+    and its roots are $\lambda = 10, 15$.
+  \end{subproblem}
+  \begin{subproblem}{c}
+    The eigenvectors can be found by solving
+    \[ \mat A \begin{pmatrix} \alpha \\ \beta \end{pmatrix} = \lambda \begin{pmatrix} \alpha \\ \beta \end{pmatrix} \]
+    for $\alpha$ and $\beta$, for both eigenvalues.
+
+    For the eigenvalue $\lambda = 10$, I find $\alpha = 1/\sqrt{5}$ and $\beta = 2/\sqrt{5}$.
+
+    For the eigenvalue $\lambda = 15$, I find $\alpha = -2/\sqrt{5}$ and $\beta = 1/\sqrt{5}$.
+
+    Note that these eigenvectors can be multiplied by -1 and remain eigenvectors.
+  \end{subproblem}
+  \begin{subproblem}{d}
+    For the matrix
+    \[ \mat B = \frac{1}{\sqrt{5}} \begin{pmatrix} 1 & -2 \\ 2 & 1 \end{pmatrix} \]
+    the diagonalized matrix is
+    \begin{align*}
+      \transpose{\mat B} \mat A \mat B = &
+        \frac{1}{5} \begin{pmatrix} 1 & 2 \\ -2 & 1 \end{pmatrix} \begin{pmatrix} 14 & -2 \\ -2 & 11 \end{pmatrix} \begin{pmatrix} 1 & -2 \\ 2 & 1 \end{pmatrix} \\
+      = & \begin{pmatrix} 10 & 0 \\ 0 & 15 \end{pmatrix}\,.
+    \end{align*}
+  \end{subproblem}
+  \begin{subproblem}{e}
+    \begin{equation}
+    \transpose{\mat B} \mat B =
+      \frac{1}{5} \begin{pmatrix} 1 & 2 \\ -2 & 1 \end{pmatrix} \begin{pmatrix} 1 & -2 \\ 2 & 1 \end{pmatrix}
+      = \frac{1}{5} \begin{pmatrix} 5 & 0 \\ 0 & 5 \end{pmatrix}
+      = \begin{pmatrix} 1 & 0 \\ 0 & 1 \end{pmatrix}\,.\nonumber
+    \end{equation}
+  \end{subproblem}
+  \begin{subproblem}{f}
+    There are a number of ways to  find the rotation angle.
+    One method is to notice that the elements of $\mat B$ should
+    correspond to a standard rotation matrix.
+    In this case, the angle is $\cos \theta = 1/\sqrt{5}$, or
+    $\theta = 63.43\deg = 1.107 {\rm rad}$.
+  \end{subproblem}
+  \begin{subproblem}{g}
+    For this, notice that $\transpose{\vec{x}} \mat A \vec{x} = {\vec{x}}^{\prime \mat T} (\transpose{\mat B}\mat A\mat B) \vec{x}'$\,.
+    Expanding this expression and casting into the necessary form,
+    I find $\alpha_1 = \sqrt{5/2}$ and $\alpha_2 = \sqrt{5/3}$.
+  \end{subproblem}
+
+
+\end{problem}
+
+
+
+\begin{problem}{2}
+  \begin{subproblem}{a}
+    For the $10\times10$ Hilbert matrix, I find
+    \[ \kappa = \frac{1.75}{1.09\times10^{-13}} = 1.6\times10^{13} \]
+  \end{subproblem}
+  \begin{subproblem}{b}
+    Using scipy.linalg.inv I find $\max\left| {\mat A}^{-1} \mat A - I \right| = 8.9\times10^{-5}$
+  \end{subproblem}
+  \begin{subproblem}{c}
+    I find in this case that $\max\left| {\mat A}^{-1} \mat A - I \right| = 4.3\times10^{-4}$.
+    This is actually even less accurate!
+  \end{subproblem}
+\end{problem}
+
+
+
+\end{document}
+

@@ -1,0 +1,87 @@
+\documentclass[]{homework}
+
+\begin{document}
+
+\solutions{10}
+
+\begin{problem}{1}\footnote{
+Note the choice of conventions made in class will result in
+an unnormalized discrete Fourier transform and inverse, that is,
+an overall normalization factor of $1/N$ is omitted.
+} \,
+
+  \begin{subproblem}{a}
+    The time-domain signal corresponding to $G(\nu_{m'})$ is given by
+    \[
+      g(t_{n'}) = \sum_{m' = 0}^{2N-1} G(\nu_{m'}) e^{2\pi i n' m' / (2N)}\,.
+    \]
+    Because $G(\nu_{m'}) = 0$ for odd $m'$, we can change this to a sum over
+    even $m'$ only.
+    \[
+      g(t_{n'}) = \sum_{m' \in {\rm even}}^{2N-1} G(\nu_{m'}) e^{2\pi i n' m' / (2N)}\,.
+    \]
+    Letting $m' = 2m$ for a set of integers $m$, we can sum over $m$ from $0$ to $N-1$
+    in place of $m'$,
+    \[
+      g(t_{n'}) = \sum_{m = 0}^{N-1} G(\nu_{2m}) e^{2\pi i n' 2m / (2N)}\,.
+    \]
+    We can then simplify and substitute in our expression for $H$ in place of $G$,
+    \[
+      g(t_{n'}) = \sum_{m = 0}^{N-1} H(\nu_{m}) e^{2\pi i n' m / N}\,.
+    \]
+    But, this is just an expression for the Fourier transform of $h$!
+    We still need to be careful and consider the cases where $n' \ge N$ separately,
+    but for $n' < N$, we have $g(t_{n'}) = h(t_{n'})$.
+    For $n' \ge N$, we have
+    \begin{align}
+      g(t_{n'}) &= \sum_{m = 0}^{N-1} H(\nu_{m}) e^{2\pi i (n' - N + N) m / N}\nonumber\\
+                &= \sum_{m = 0}^{N-1} H(\nu_{m}) e^{2\pi i (n' - N) m / N} e^{2\pi i m}\nonumber\\
+                &= \sum_{m = 0}^{N-1} H(\nu_{m}) e^{2\pi i (n' - N) m / N}\nonumber\\
+                &= h(t_{n'-N}) \nonumber
+    \end{align}
+    where we have both added and subtracted $N$ in the exponent in the first line,
+    factored out the added $N$ in the second line, then noted
+    that $e^{2\pi i m} = 1$ for an integer $m$ per Euler's identity in the third.
+    The third line is the Fourier transform of $h$ with the time sample
+    taken at $n'-N$.
+
+  \end{subproblem}
+
+  \begin{subproblem}{b}
+    For this derivation, it is perhaps easiest to manpulate the final
+    expression in terms of $h$ and show its equivalence to the expression
+    in terms of $g$. Beginning with the Fourier transform of $h$, we have
+    that
+    \[
+      h(t_{n}) = \sum_{m = 0}^{N-1} H(\nu_{m}) e^{2\pi i n m / N}\,.
+    \]
+    Evaluating this expression at values of $n$ coincident with $n'+N/2$ gives us
+    \begin{align}
+      h(t_{n'+N/2}) & = \sum_{m = 0}^{N-1} H(\nu_{m}) e^{2\pi i (n'+N/2) m / N}\nonumber \\
+                    & = \sum_{m = 0}^{N-1} H(\nu_{m}) e^{2\pi i n' m / N} e^{\pi i m}\nonumber \\
+                    & = \sum_{m = 0}^{N-1} H(\nu_{m}) e^{2\pi i n' m / N} (-1)^m\,.\nonumber 
+    \end{align}
+    Combining these,
+    \[
+      h(t_{n'}) + h(t_{n'+N/2}) = \sum_{m = 0}^{N-1} H(\nu_{m}) e^{2\pi i n' m / N} (1 + (-1)^m)\,.
+    \]
+    The combination $(1 + (-1)^m)$ will be zero for odd $m$, and otherwise $2$, so
+    \[
+      h(t_{n'}) + h(t_{n'+N/2}) = 2 \sum_{m \in {\rm evens}}^{N-1} H(\nu_{m}) e^{2\pi i n' m / N}\,,
+    \]
+    which is precisely what we want for $g$, i.e.
+    \begin{align}
+      g(t_{n'}) &= \sum_{m' = 0}^{N/2-1} G(\nu_{m'}) e^{2\pi i n' m' / (N/2)}\nonumber \\
+                &= \sum_{m' = 0}^{N/2-1} G(\nu_{m'}) e^{4\pi i n' m' / N}\nonumber \\
+                &= \sum_{m \in {\rm evens}}^{N-1} G(\nu_{m/2}) e^{2\pi i n' m / N}\nonumber \\
+                &= \sum_{m \in {\rm evens}}^{N-1} H(\nu_{m}) e^{2\pi i n' m / N}\nonumber
+    \end{align}
+    for $m = 2m'$. Thus the two sides of the equation in the problem statement are equivalent.
+  \end{subproblem}
+
+\end{problem}
+
+
+
+\end{document}
+

@@ -1,14 +1,15 @@
 # Computational Physics Course Materials
 
 This repository contains materials from an upper-level undergraduate computational physics course taught remotely in Spring 2021.
-The course was taught in python, and so predominantly contains lectures, python notebooks, and course assignments as such.
+The course was taught in python, and so this repo predominantly contains lecture notes, example python notebooks, and both written and python course assignments.
 The [course syllabus](https://github.com/jbmertens/computational_physics/blob/main/syllabus.pdf) contains a general overview,
-but was not strictly followed; more details are provided in this readme.
+but was not strictly followed, so more details are provided in this readme.
 
 ## Lectures Notes
 
-In the lectures directory are predominantly outlines of notes from weekly class lectures as raw text files,
-and actual notes as written during the lecture in the onenote directory. These notes and corresponding example
+The [lectures](https://github.com/jbmertens/computational_physics/tree/main/lectures) predominantly contains
+notes from weekly class lectures as raw text files, actual lecture notes presented during lectures in the `onenote` subdirectory, and
+python notebook examples in the `notebooks` subdirectory. The lecture notes and corresponding example
 python notebooks are roughly as follows,
 
  - [Lec 1](https://github.com/jbmertens/computational_physics/blob/main/lectures/onenote/Week%201%20-%20Monday.pdf) When are computational methods useful? | [Arrays, vectors, and such](https://github.com/jbmertens/computational_physics/blob/main/lectures/notebooks/Arrays_Vectors.ipynb)
@@ -40,7 +41,7 @@ Quick examples of how to optimize code performance in python are [here](https://
 
 ## Assignments
 
-These included:
+Class assignments included:
 
  - [Written homework](https://github.com/jbmertens/computational_physics/tree/main/assignments/hw_nb)
  - [Coding homework](https://github.com/jbmertens/computational_physics/tree/main/assignments/hw_nb)
